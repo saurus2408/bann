@@ -124,13 +124,13 @@
   </svg>
 
   <!-- Main Experience Wrapper -->
-  <main id="app" class="app-container stage-idle">
+  <main id="app" class="app-container">
     
     <!-- Canvas for Floating Petals, Light Dust & Sparkles -->
     <canvas id="particleCanvas"></canvas>
 
-    <!-- Background Garden Layers (Hidden initially, awakens on drag) -->
-    <div id="gardenWorld" class="garden-world" aria-hidden="true">
+    <!-- Background Garden Layers (Always active & blooming) -->
+    <div id="gardenWorld" class="garden-world active" aria-hidden="true">
       <div class="garden-layer layer-back" id="gardenBack"></div>
       <div class="garden-layer layer-vines" id="gardenVines">
         <!-- SVG Vines growing organically -->
@@ -146,101 +146,8 @@
       <div class="garden-layer layer-creatures" id="gardenCreatures"></div>
     </div>
 
-    <!-- Stage 1 & 2: Interactive Center Rose Container -->
-    <section id="heroRoseSection" class="hero-rose-section" aria-label="Bông hoa hồng mở đầu">
-      
-      <!-- Ambient Glow Behind Hero Rose -->
-      <div class="rose-halo" id="roseHalo"></div>
-
-      <!-- Drag Indicator / Target Trail -->
-      <div class="drag-hint-ring" id="dragHintRing">
-        <svg class="ring-svg" viewBox="0 0 200 200">
-          <circle cx="100" cy="100" r="85" class="ring-track" />
-          <circle cx="100" cy="100" r="85" class="ring-progress" id="ringProgress" />
-        </svg>
-        <div class="drag-arrow-guide">
-          <span class="arrow-icon">✨</span>
-        </div>
-      </div>
-
-      <!-- Draggable Rose Element -->
-      <div id="seedRose" class="seed-rose-element" role="button" tabindex="0" aria-label="Kéo bông hoa hồng để đánh thức khu vườn" touch-action="none">
-        <svg class="seed-rose-svg" viewBox="0 0 240 320">
-          <!-- Flower Stem -->
-          <path class="rose-stem-path" d="M120,135 Q118,200 122,250 T120,310" stroke="url(#stemGrad)" stroke-width="8" stroke-linecap="round" fill="none"/>
-          
-          <!-- Stem Leaves with delicate veins -->
-          <g class="stem-leaf left-leaf">
-            <path d="M120,205 Q70,195 50,175 Q75,160 119,195 Z" fill="url(#leafGrad)"/>
-            <path d="M119,195 Q85,185 52,176" stroke="#b7e4c7" stroke-width="1.5" fill="none" opacity="0.6"/>
-          </g>
-          <g class="stem-leaf right-leaf">
-            <path d="M121,240 Q170,230 190,210 Q165,195 122,230 Z" fill="url(#leafGrad)"/>
-            <path d="M122,230 Q155,220 188,211" stroke="#b7e4c7" stroke-width="1.5" fill="none" opacity="0.6"/>
-          </g>
-
-          <!-- Thorn details -->
-          <path d="M117,220 Q110,218 108,214 Q114,216 118,217" fill="#40916c"/>
-          <path d="M123,260 Q130,258 132,254 Q126,256 122,257" fill="#40916c"/>
-
-          <!-- Flower Head Blossom -->
-          <g class="rose-head-group" transform="translate(120, 110)">
-            <!-- Sepal leaves -->
-            <path d="M-15,30 C-35,35 -45,15 -50,-5 C-42,5 -25,15 -10,24 Z" fill="url(#leafGrad)"/>
-            <path d="M15,30 C35,35 45,15 50,-5 C42,5 25,15 10,24 Z" fill="url(#leafGrad)"/>
-            <path d="M0,32 C0,45 -5,55 -10,60 C-2,50 3,42 0,32 Z" fill="url(#leafGrad)"/>
-
-            <!-- Petals Layer 1 (Outer Deep Petals) -->
-            <path class="petal petal-outer-1" d="M0,35 C-35,42 -68,20 -72,-15 C-78,-50 -42,-68 -15,-60 C-5,-58 5,-58 15,-60 C42,-68 78,-50 72,-15 C68,20 35,42 0,35 Z" fill="url(#roseGradPink)"/>
-            
-            <!-- Petals Layer 2 (Flared Petals with Highlights) -->
-            <path class="petal petal-outer-2" d="M-50,8 C-68,-12 -62,-45 -35,-58 C-8,-70 26,-62 48,-48 C70,-30 66,8 44,28 C25,44 -25,42 -50,8 Z" fill="url(#roseGradPink)"/>
-            <path d="M-45,-10 C-58,-25 -45,-50 -25,-54 C-5,-58 15,-52 28,-40 C10,-45 -22,-40 -45,-10 Z" fill="#ffffff" opacity="0.35"/>
-
-            <!-- Petals Layer 3 (Mid Cupped Petals) -->
-            <path class="petal petal-mid-1" d="M-32,24 C-50,8 -45,-25 -25,-36 C-5,-48 22,-40 36,-26 C50,-12 48,16 28,30 C12,42 -16,40 -32,24 Z" fill="url(#roseGradPink)"/>
-            <path class="petal petal-mid-2" d="M22,22 C38,10 35,-18 20,-28 C5,-38 -18,-32 -28,-20 C-38,-8 -34,14 -18,24 C-4,32 10,30 22,22 Z" fill="#ff4b72"/>
-
-            <!-- Inner Heart Petals (Spiral Heart) -->
-            <path class="petal petal-inner-1" d="M-18,12 C-28,0 -22,-20 -8,-25 C6,-30 22,-22 25,-8 C28,6 16,20 2,22 C-12,24 -15,16 -18,12 Z" fill="#e81b54"/>
-            <path class="petal petal-inner-2" d="M-8,-6 C-12,-14 -4,-20 4,-18 C12,-16 15,-8 11,-2 C7,4 0,4 -4,1 C-8,-2 -8,-4 -8,-6 Z" fill="#b3003b"/>
-            <path class="petal petal-core" d="M-3,-3 C-6,-7 -2,-11 2,-10 C6,-9 8,-5 5,-2 C2,1 -1,1 -3,-3 Z" fill="#ffd1dc"/>
-          </g>
-        </svg>
-
-        <!-- Touch / Drag Visual Pulsing Ripple -->
-        <div class="touch-pulse"></div>
-      </div>
-
-      <!-- Typography Instructions -->
-      <div class="hero-instructions" id="heroInstructions">
-        <p class="hero-subtitle">Có một món quà nhỏ dành cho bạn 🌷</p>
-        <h1 class="hero-title">Chạm vào hoa, kéo nhẹ và xem điều kỳ diệu nhé!</h1>
-        <div class="drag-prompt-badge">
-          <span class="swipe-hand-icon">👆</span>
-          <span class="prompt-text">Kéo hoa để đánh thức khu vườn</span>
-        </div>
-      </div>
-
-      <!-- Awakening Progress Indicator -->
-      <div class="awakening-progress-wrapper" id="awakeningBarWrapper">
-        <div class="awakening-progress-track">
-          <div class="awakening-progress-fill" id="awakeningProgressFill"></div>
-        </div>
-        <span class="awakening-status-text" id="awakeningStatusText">Đang đánh thức mầm hoa... 🌿</span>
-      </div>
-    </section>
-
-    <!-- Stage 3 Banner Announcement -->
-    <div id="gardenBanner" class="garden-banner" aria-live="polite">
-      <div class="banner-inner">
-        <span class="banner-icon">✨ 🌸 ✨</span>
-        <h2 class="banner-text">Gửi bạn một vườn hoa, một ngày vui và thật nhiều điều tốt đẹp!</h2>
-      </div>
-    </div>
-
-    <!-- Stage 4: Greeting Card Container -->
-    <section id="cardSection" class="card-section" aria-label="Thiệp chúc mừng 20/10" hidden>
+    <!-- Centerpiece: Greeting Card with Crown Rose -->
+    <section id="cardSection" class="card-section" aria-label="Thiệp chúc mừng 20/10">
       <article class="greeting-card" id="greetingCard">
         
         <!-- Ornamental Floral Border Corners -->
@@ -278,13 +185,60 @@
         <!-- Card Scrollable Content -->
         <div class="card-body">
           <header class="card-header">
+            
+            <!-- Crowning Blooming Hero Rose -->
+            <div class="card-hero-rose" id="cardHeroRose" role="button" tabindex="0" title="Chạm vào hoa hồng để tung cánh hoa rực rỡ!">
+              <div class="rose-halo"></div>
+              <svg class="crown-rose-svg" viewBox="0 0 240 220">
+                <!-- Rose Stem -->
+                <path class="rose-stem-path" d="M120,115 Q118,155 120,195" stroke="url(#stemGrad)" stroke-width="7" stroke-linecap="round" fill="none"/>
+                <!-- Stem Leaves -->
+                <g class="stem-leaf left-leaf">
+                  <path d="M120,155 Q75,145 55,128 Q80,115 119,145 Z" fill="url(#leafGrad)"/>
+                  <path d="M119,145 Q88,135 57,129" stroke="#b7e4c7" stroke-width="1.5" fill="none" opacity="0.6"/>
+                </g>
+                <g class="stem-leaf right-leaf">
+                  <path d="M120,170 Q165,160 185,142 Q160,130 121,160 Z" fill="url(#leafGrad)"/>
+                  <path d="M121,160 Q152,150 183,143" stroke="#b7e4c7" stroke-width="1.5" fill="none" opacity="0.6"/>
+                </g>
+                <!-- Flower Blossom Head -->
+                <g class="rose-head-group" transform="translate(120, 90)">
+                  <!-- Sepal leaves -->
+                  <path d="M-15,30 C-35,35 -45,15 -50,-5 C-42,5 -25,15 -10,24 Z" fill="url(#leafGrad)"/>
+                  <path d="M15,30 C35,35 45,15 50,-5 C42,5 25,15 10,24 Z" fill="url(#leafGrad)"/>
+                  <path d="M0,32 C0,45 -5,55 -10,60 C-2,50 3,42 0,32 Z" fill="url(#leafGrad)"/>
+
+                  <!-- Outer Petals Tier 1 -->
+                  <path class="petal petal-outer-1" d="M0,35 C-35,42 -68,20 -72,-15 C-78,-50 -42,-68 -15,-60 C-5,-58 5,-58 15,-60 C42,-68 78,-50 72,-15 C68,20 35,42 0,35 Z" fill="url(#roseGradPink)"/>
+                  
+                  <!-- Outer Petals Tier 2 -->
+                  <path class="petal petal-outer-2" d="M-50,8 C-68,-12 -62,-45 -35,-58 C-8,-70 26,-62 48,-48 C70,-30 66,8 44,28 C25,44 -25,42 -50,8 Z" fill="url(#roseGradPink)"/>
+                  <path d="M-45,-10 C-58,-25 -45,-50 -25,-54 C-5,-58 15,-52 28,-40 C10,-45 -22,-40 -45,-10 Z" fill="#ffffff" opacity="0.35"/>
+
+                  <!-- Mid Petals Layer -->
+                  <path class="petal petal-mid-1" d="M-32,24 C-50,8 -45,-25 -25,-36 C-5,-48 22,-40 36,-26 C50,-12 48,16 28,30 C12,42 -16,40 -32,24 Z" fill="url(#roseGradPink)"/>
+                  <path class="petal petal-mid-2" d="M22,22 C38,10 35,-18 20,-28 C5,-38 -18,-32 -28,-20 C-38,-8 -34,14 -18,24 C-4,32 10,30 22,22 Z" fill="#ff4b72"/>
+
+                  <!-- Inner Spiral Heart Petals -->
+                  <path class="petal petal-inner-1" d="M-18,12 C-28,0 -22,-20 -8,-25 C6,-30 22,-22 25,-8 C28,6 16,20 2,22 C-12,24 -15,16 -18,12 Z" fill="#e81b54"/>
+                  <path class="petal petal-inner-2" d="M-8,-6 C-12,-14 -4,-20 4,-18 C12,-16 15,-8 11,-2 C7,4 0,4 -4,1 C-8,-2 -8,-4 -8,-6 Z" fill="#b3003b"/>
+                  <path class="petal petal-core" d="M-3,-3 C-6,-7 -2,-11 2,-10 C6,-9 8,-5 5,-2 C2,1 -1,1 -3,-3 Z" fill="#ffd1dc"/>
+                </g>
+              </svg>
+              <div class="rose-tap-hint">
+                <span class="tap-sparkle">✨</span>
+                <span>Chạm vào hoa</span>
+                <span class="tap-sparkle">✨</span>
+              </div>
+            </div>
+
             <div class="badge-date">
               <span class="badge-sparkle">✨</span>
               <span>20 . 10 . 2026</span>
               <span class="badge-sparkle">✨</span>
             </div>
             <h2 class="card-title">🌸 CHÚC MỪNG NGÀY 20/10 🌸</h2>
-            <p class="card-recipient" id="cardRecipientDisplay">Gửi cô bạn thân yêu của tôi 🌷</p>
+            <p class="card-recipient" id="cardRecipientDisplay">Gửi bạn thân mến 🌷</p>
             <div class="card-divider">
               <span class="divider-line"></span>
               <span class="divider-rose">🌹</span>
@@ -308,7 +262,7 @@
           </footer>
         </div>
 
-        <!-- Card Action Toolbar (Actual working features) -->
+        <!-- Card Action Toolbar -->
         <div class="card-actions">
           <button type="button" id="btnSpawnFlowers" class="btn-action btn-flower" title="Tung thêm hoa hồng bay phấp phới">
             <span class="btn-icon">🌹</span>
@@ -330,12 +284,12 @@
             <span class="btn-label">Sao chép</span>
           </button>
 
-          <button type="button" id="btnReplayGarden" class="btn-action btn-replay" title="Xem lại quá trình khu vườn nở rộ">
-            <span class="btn-icon">🔄</span>
-            <span class="btn-label">Xem lại</span>
+          <button type="button" id="btnRebloom" class="btn-action btn-rebloom" title="Khu vườn hoa bừng nở rộ rực rỡ">
+            <span class="btn-icon">🌸</span>
+            <span class="btn-label">Nở hoa</span>
           </button>
 
-          <button type="button" id="btnShareModal" class="btn-action btn-share" title="Tạo link chúc mừng mang tên bạn">
+          <button type="button" id="btnShareLink" class="btn-action btn-share" title="Sao chép link gửi ngay cho bạn bè (Không cần nhập tên)">
             <span class="btn-icon">💌</span>
             <span class="btn-label">Gửi bạn bè</span>
           </button>
@@ -344,42 +298,12 @@
       </article>
     </section>
 
-    <!-- Floating Quick Audio Button (Available throughout experience) -->
+    <!-- Floating Quick Audio Button -->
     <div class="quick-sound-control">
       <button type="button" id="btnQuickMusic" class="quick-music-btn" aria-label="Bật/Tắt âm thanh">
         <span class="quick-sound-wave" id="soundWaveAnim"></span>
         <span class="quick-sound-icon" id="quickSoundIcon">🎵</span>
       </button>
-    </div>
-
-    <!-- Personalize / Share Modal -->
-    <div id="shareModal" class="modal-backdrop" hidden>
-      <div class="modal-dialog" role="dialog" aria-labelledby="modalTitle">
-        <button type="button" class="modal-close" id="btnCloseModal" aria-label="Đóng">&times;</button>
-        <div class="modal-header">
-          <span class="modal-badge">💌 Cá nhân hóa thiệp</span>
-          <h3 id="modalTitle" class="modal-title">Gửi Tặng Người Bạn Thân</h3>
-          <p class="modal-desc">Nhập tên để website tự động tạo đường link chúc mừng dành riêng cho người ấy nhé!</p>
-        </div>
-        <form id="personalizeForm" class="modal-form" onsubmit="return false;">
-          <div class="form-group">
-            <label for="inputRecipient">Tên người nhận (ví dụ: Lan Anh, Cô bạn bàn bên):</label>
-            <input type="text" id="inputRecipient" placeholder="Nhập tên bạn nhận thiệp..." maxlength="40">
-          </div>
-          <div class="form-group">
-            <label for="inputSender">Tên người gửi (ví dụ: Tuấn, Một người bạn giấu tên):</label>
-            <input type="text" id="inputSender" placeholder="Tên của bạn..." maxlength="40">
-          </div>
-          <div class="modal-buttons">
-            <button type="button" id="btnApplyAndCopyLink" class="btn-primary">
-              <span>✨ Tạo link & Sao chép</span>
-            </button>
-            <button type="button" id="btnApplyAndPreview" class="btn-secondary">
-              <span>Xem thử thiệp</span>
-            </button>
-          </div>
-        </form>
-      </div>
     </div>
 
     <!-- Sweet Toast Notification -->

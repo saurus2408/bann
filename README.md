@@ -1,55 +1,48 @@
 # 🌸 Vườn Hoa Hồng 20/10 – Một Chút Dịu Dàng Gửi Bạn
 
-> Website tĩnh chúc mừng ngày Phụ nữ Việt Nam 20/10 dành tặng bạn bè với trải nghiệm tương tác kéo hoa độc đáo, đánh thức cả một vườn hoa hồng rực rỡ và đón nhận tấm thiệp chúc mừng ý nghĩa.
+> Website tĩnh chúc mừng ngày Phụ nữ Việt Nam 20/10 dành tặng bạn bè. **Gửi link là hiển thị ngay vườn hoa hồng và thiệp chúc mừng rực rỡ, không bắt người nhận hay người gửi phải nhập tên!**
 
 [![GitHub Pages](https://img.shields.io/badge/Demo-GitHub%20Pages-ff758c?style=for-the-badge&logo=github)](https://saurus2408.github.io/bann/)
 
 ---
 
-## ✨ 4 Giai Đoạn Trải Nghiệm Tinh Tế
+## ✨ Trải Nghiệm Trực Quan & Tinh Tế
 
-1. **Bông hoa hồng duy nhất (Idle):**
-   - Bông hoa hồng nhiều lớp cánh mềm mại đung đưa trong làn gió nhẹ giữa màn hình.
-   - Những hạt sáng lung linh và cánh hoa hồng bay chầm chậm trong không gian.
-   - Thông điệp gợi mở: *“Có một món quà nhỏ dành cho bạn 🌷 – Chạm vào hoa, kéo nhẹ và xem điều kỳ diệu nhé!”*.
+1. **Hoa Hồng & Thiệp Hiển Thị Ngay Khi Mở Link:**
+   - Người nhận nhấp vào link là được chiêm ngưỡng ngay khu vườn hoa hồng bừng nở bao quanh màn hình, những cánh hoa rơi bồng bềnh và chú bướm lượn dập dờn.
+   - Tâm điểm là **tấm thiệp chúc mừng 20/10 phong cách giấy lụa viền hoa**, được đội vương miện bởi một **bông hoa hồng nở rộ rực rỡ**.
+   - Không còn câu đố kéo thả hay các bước chờ đợi; quà tặng và lời chúc hiện ngay trước mắt!
 
-2. **Đánh thức khu vườn (Awakening):**
-   - Tương tác kéo hoa bằng chuột (PC) hoặc ngón tay (điện thoại) mượt mà bằng **Pointer Events** (`touch-action: none`).
-   - Đường kéo để lại vệt sáng lấp lánh và cánh hoa hồng bung nở.
-   - Nhánh cây xanh và các nụ hồng bắt đầu vươn mình từ tâm ra hai bên.
-   - Vòng tròn và thanh tiến trình hiển thị trực quan mức độ đánh thức khu vườn.
+2. **Tương Tác Chạm Vào Hoa:**
+   - Chạm hoặc nhấp vào bông hoa hồng ở đỉnh thiệp để tung ra những làn mưa cánh hoa hồng lấp lánh và tia sáng lung linh.
+   - Tự động đánh thức giai điệu âm nhạc nhẹ nhàng ở lần chạm đầu tiên.
 
-3. **Khu vườn hoa hồng rực rỡ (Blooming):**
-   - Toàn bộ màn hình bừng sáng thành khu vườn hoa hồng nở rộ với nhiều sắc thái (hồng phấn, đỏ hồng, trắng kem, đào san hô).
-   - Những chú bướm nhỏ bay lượn dập dờn giữa các tầng hoa.
-   - Biểu ngữ ấm áp xuất hiện: *“Gửi bạn một vườn hoa, một ngày vui và thật nhiều điều tốt đẹp!”*.
+3. **Gửi Link Nhanh Chóng – Không Cần Nhập Tên:**
+   - Nút **💌 Gửi bạn bè**: Tự động sao chép ngay đường dẫn web vào khay nhớ tạm (hoặc mở menu chia sẻ tiện lợi trên điện thoại).
+   - Không có form bắt nhập tên phiền phức, bạn chỉ cần sao chép và dán gửi ngay cho bạn bè qua Zalo, Messenger, SMS, Instagram,...
 
-4. **Tấm thiệp chúc mừng 20/10 (Card Reveal):**
-   - Tấm thiệp phong cách giấy lụa kết hợp viền hoa trang nhã mở ra nhẹ nhàng ở trung tâm.
-   - Lời chúc chân thành, vui tươi dành riêng cho bạn bè (tôn vinh sự tự tin, niềm vui và tình bạn đẹp đẽ, không tình cảm đôi lứa).
-   - Tương thích hoàn hảo trên mọi kích thước màn hình điện thoại và máy tính.
+4. **Lời Chúc Tự Nhiên & Chân Thành:**
+   - Nội dung lời chúc hướng đến sự vui vẻ, may mắn, yêu đời và tự tin dành cho bạn bè, đồng nghiệp nữ mà không bị mang sắc thái tình cảm đôi lứa.
 
 ---
 
 ## 🌹 Các Tính Năng Tương Tác Nổi Bật
 
 - **🌹 Thêm hoa:** Bấm để tung thêm một làn mưa cánh hoa hồng bay phấp phới.
-- **🎵 Nhạc nền du dương:** Tích hợp bộ tạo âm thanh du dương (*Procedural Web Audio API*), hoạt động 100% không lo lỗi link mạng hay bản quyền.
-- **🔊 Đọc lời chúc:** Ứng dụng Web Speech API để phát giọng đọc lời chúc truyền cảm tiếng Việt.
-- **📋 Sao chép lời chúc:** Sao chép toàn bộ nội dung lời chúc vào clipboard chỉ với 1 cú chạm.
-- **🔄 Xem lại khu vườn:** Xem lại khoảnh khắc hoa nở bất cứ lúc nào mà không cần tải lại trang.
-- **💌 Cá nhân hóa & Tạo link chia sẻ:** 
-  - Tự động nhận diện tham số URL: `?to=Tên_Bạn_Nhận&from=Tên_Bạn_Gửi`
-  - Ví dụ: `https://saurus2408.github.io/bann/?to=Lan+Anh&from=Tuấn`
+- **🎵 Nhạc nền du dương:** Tích hợp bộ tạo âm thanh du dương (*Procedural Web Audio API*), phát giai điệu hộp nhạc trong trẻo 100% không lo lỗi link mạng hay bản quyền.
+- **🔊 Đọc lời chúc:** Ứng dụng Web Speech API phát giọng đọc lời chúc truyền cảm tiếng Việt.
+- **📋 Sao chép lời chúc:** Sao chép toàn bộ văn bản lời chúc vào clipboard chỉ với 1 cú chạm.
+- **🌸 Nở hoa:** Bấm để làm mới và kích hoạt làn sóng hoa nở rộ khắp khu vườn.
+- **💌 Gửi bạn bè:** 1 chạm để sao chép link sạch gửi tặng mọi người ngay lập tức!
 
 ---
 
 ## 🛠️ Công Nghệ & Tối Ưu Hóa
 
 - **HTML5 & SVG Thuần:** Tạo hoa hồng vector sắc nét, nhẹ, không vỡ nét trên màn hình Retina/OLED.
-- **CSS3 Animation & Glassmorphism:** Hiệu ứng chuyển động tự nhiên với keyframes và CSS Variables.
+- **CSS3 Animation & Glassmorphism:** Hiệu ứng chuyển động mượt mà với keyframes và CSS Variables.
 - **Vanilla JavaScript:** 
-  - Particle Engine hiệu năng cao trên Canvas (tối ưu hóa FPS, giới hạn số lượng hạt trên thiết bị di động).
+  - Particle Engine hiệu năng cao trên Canvas (tối ưu hóa 60 FPS, thích ứng màn hình điện thoại).
   - Tự động tạm dừng animation khi chuyển tab (`visibilitychange`) giúp tiết kiệm pin điện thoại.
   - Hỗ trợ chuẩn truy cập giảm chuyển động `prefers-reduced-motion`.
 
